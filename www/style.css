@@ -1,0 +1,275 @@
+/* --- Basis Instellingen --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #f4f1ec;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Navigatie (De zwarte balk bovenin) --- */
+.nav-container {
+    background-color: #2c2c2c;
+    padding: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+.logo {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- Filter Sectie (Zoekbalk) --- */
+.filter-sidebar {
+    background-color: white;
+    padding: 1.5rem;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-group h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.filter-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* --- De Artworks Grid --- */
+.container {
+    display: grid;
+    /* Standaard 1 kolom (onder elkaar) voor mobiel */
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.art-image {
+    width: 100%;
+    height: auto;
+    /* Zorgt dat de verhouding van het schilderij goed blijft */
+    aspect-ratio: 4 / 3;
+    /* Geeft alle plaatjes dezelfde vorm */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.2rem;
+}
+
+/* --- Knoppen --- */
+.back-button {
+    display: block;
+    width: 100%;
+    /* Knop over de hele breedte op mobiel */
+    background-color: #2c2c2c;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c2c2c;
+    color: white;
+    margin-top: 3rem;
+}
+
+/* --- MEDIA QUERIES (Voor grotere schermen zoals Tablets/Laptops) --- */
+@media (min-width: 768px) {
+    .container {
+        /* Op grote schermen 2 of 3 naast elkaar */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding: 2rem 3rem;
+    }
+
+    .filter-sidebar {
+        margin: 2rem 3rem;
+    }
+
+    .filter-form {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .filter-group {
+        flex: 1;
+    }
+
+    .back-button {
+        width: auto;
+        padding: 10px 25px;
+    }
+}
+
+
+
+/* Filter Sectie Styling */
+.filter-sidebar {
+    background-color: white;
+    padding: 1.5rem;
+    margin: 2rem 3rem 0 3rem;
+    /* Zorgt dat het uitlijnt met je gallery padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.filter-group h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: #888;
+}
+
+.filter-group ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-group ul li a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.filter-group ul li a:hover {
+    background-color: #2c2c2c;
+    color: white;
+    border-color: #2c2c2c;
+}
+
+/* Container voor de statistieken */
+.stats-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.stats-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* De layout voor de kaarten in statistics.php*/
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Individuele statistiek kaarten */
+.stat-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling voor de tekst in de kaarten in statistics.php */
+.stat-card h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.stat-card .stat-value {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 15px 0 5px 0;
+}
+
+.stat-card .stat-subtext {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+}
+
+#page-timer-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+    pointer-events: none;
+    /* Zorgt dat je er 'doorheen' kunt klikken */
+}
+
+#timer-seconds {
+    font-weight: bold;
+    color: #4a90e2;
+}
